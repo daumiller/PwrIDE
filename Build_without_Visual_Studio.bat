@@ -1,0 +1,1 @@
+C:\Windows\Microsoft.NET\Framework\v3.5\MSBuild.exe /p:Configuration=Release /p:Platform="any cpu" PwrPlus.sln > Build_Release.log

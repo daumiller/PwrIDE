@@ -1,0 +1,53 @@
+//===================================================
+//  Future Enhancements / Production Release
+//===================================================
+* Settings/Config
+  -- Store/Restore File Bookmark Positions (store local db; update on tab-close; entry-number limited)
+  -- Keep-Alive enable/interval options per-server
+  -- Finish Changing Defaults to RepGen (Syntax/Save As/...)
+* ICSharpCode.TextEditor
+  -- Full Document Background Color
+  -- Procedure Tips (autoshow upon name completion (or CTRL+Space))
+  -- Double Click on #INCLUDE/#IMPORT to open file (use frmSource's importer, or hook frmProject?)
+  -- Nested Multi-Line Comment Fix (ICSharpCode:DefaultHighlightingManager bug)
+  -- Do/End Section/End Brace Matching (highligh matching Section/Do->Ends)
+  -- Fix Brace Matching Across String Literals (ICSharpCode:something limitation)
+* Project Explorer
+  -- Multi-Select (may make Beta R2?, requires new/custom TreeView control)
+  -- Project Markers/Flags: Mark Projects as Active/Completed/Priority (display with different colored project icons)
+  -- Possibly restore F2 shortcut for renaming files (hijacked by Bookmarks global hotkey, could test window focus & pass along to project?)
+  -- Rewrite Drag & Drop copying
+    --don't re-copy files from one project being dragged to a different project on the same Sym/Local
+    --allow copying a project to another location with a same-named project (overwrite/merge)
+    --allow reordering of files/project (and update Projects file to reflect)
+  -- Create Reports\/Letters\ directories for local storage types (no change needed for project file, base path of off file type)
+* Source Control System
+* Misc
+  -- standard file headers
+  -- when double-click on Error from an included file, go to line if File, for that Sym, is open; else try to open it automagically
+  -- Sym/Local "Find in Files" (like Search section or Report Generator Control in Episys)
+  -- File Transfer to/from Sym
+  -- Code Snippet Manager (Add/Edit/Insert/Surround)
+  -- Compare/Diff files (esp. same file across Syms)
+  -- Header/Column Sorting for Dialogs (like frmFileOpen)
+  -- Implement Help File
+    -- Also Help link to eDocs
+    -- Highlight + F1 quick help lookup (link to OLP)
+* Offline/Interpreter/Debug
+  -- Query/Update copy of SQL DB Extract for off-host use
+  -- Stepping/Debugging of RepGen (& PowerPlus)
+
+//////////////////////////////////
+//    FIXED IN THIS RELEASE     //
+//////////////////////////////////
+* FileOpen bug w/ <5 chars (substring...)
+* Set RepGen as Default for Add New File to Project
+* Added Global ENTER handler for frmFileOpen
+
+//////////////////////////////////
+//          NEW BUGS            //
+//////////////////////////////////
+
+//////////////////////////////////
+//          TO TEST             //
+//////////////////////////////////

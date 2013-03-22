@@ -1,0 +1,289 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="3.5" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{B7768E67-799C-42E8-B2B3-AD9B09AFA7D7}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>PwrIDE</RootNamespace>
+    <AssemblyName>PwrIDE</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ApplicationIcon>blocks.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="ICSharpCode.TextEditor, Version=3.0.0.3437, Culture=neutral, PublicKeyToken=4d61825e8dd49f1a, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WeifenLuo.WinFormsUI.Docking, Version=2.4.0.16114, Culture=neutral, processorArchitecture=MSIL" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Config.cs" />
+    <Compile Include="frmAbout.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAbout.Designer.cs">
+      <DependentUpon>frmAbout.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmAddLocal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAddLocal.Designer.cs">
+      <DependentUpon>frmAddLocal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmAddProjectFile.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAddProjectFile.Designer.cs">
+      <DependentUpon>frmAddProjectFile.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmAddServer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAddServer.Designer.cs">
+      <DependentUpon>frmAddServer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmAddSym.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAddSym.Designer.cs">
+      <DependentUpon>frmAddSym.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmError.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmError.Designer.cs">
+      <DependentUpon>frmError.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmFileNew.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmFileNew.designer.cs">
+      <DependentUpon>frmFileNew.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmFileOpen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmFileOpen.designer.cs">
+      <DependentUpon>frmFileOpen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmFind.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmFind.Designer.cs">
+      <DependentUpon>frmFind.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmImportProjects.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmImportProjects.Designer.cs">
+      <DependentUpon>frmImportProjects.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmLogin.Designer.cs">
+      <DependentUpon>frmLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMain.designer.cs">
+      <DependentUpon>frmMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmProject.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmProject.designer.cs">
+      <DependentUpon>frmProject.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmReport.Designer.cs">
+      <DependentUpon>frmReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmRunFM.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmRunFM.Designer.cs">
+      <DependentUpon>frmRunFM.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmRunRep.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmRunRep.Designer.cs">
+      <DependentUpon>frmRunRep.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmSettings.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSettings.designer.cs">
+      <DependentUpon>frmSettings.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmSource.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSource.designer.cs">
+      <DependentUpon>frmSource.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Importer.cs" />
+    <Compile Include="InputBox.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InputBox.Designer.cs">
+      <DependentUpon>InputBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Local.cs" />
+    <Compile Include="LocalFile.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Project.cs" />
+    <Compile Include="ProjectFile.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="frmAbout.resx">
+      <DependentUpon>frmAbout.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAddLocal.resx">
+      <DependentUpon>frmAddLocal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAddProjectFile.resx">
+      <DependentUpon>frmAddProjectFile.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAddServer.resx">
+      <DependentUpon>frmAddServer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAddSym.resx">
+      <DependentUpon>frmAddSym.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmError.resx">
+      <DependentUpon>frmError.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmFileNew.resx">
+      <DependentUpon>frmFileNew.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmFileOpen.resx">
+      <DependentUpon>frmFileOpen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmFind.resx">
+      <DependentUpon>frmFind.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmImportProjects.resx">
+      <DependentUpon>frmImportProjects.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmLogin.resx">
+      <DependentUpon>frmLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMain.resx">
+      <DependentUpon>frmMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmProject.resx">
+      <DependentUpon>frmProject.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmReport.resx">
+      <DependentUpon>frmReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmRunFM.resx">
+      <DependentUpon>frmRunFM.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmRunRep.resx">
+      <DependentUpon>frmRunRep.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSettings.resx">
+      <DependentUpon>frmSettings.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSource.resx">
+      <DependentUpon>frmSource.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InputBox.resx">
+      <DependentUpon>InputBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <None Include="Data\PwrPlus.xshd">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Data\RepGen.xshd">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="todo.text" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="PwrPlusComplete.cs" />
+    <Compile Include="PwrPlusFold.cs" />
+    <Compile Include="RepGenComplete.cs" />
+    <Compile Include="RepGenFold.cs" />
+    <Compile Include="SkinColorTable.cs" />
+    <Compile Include="SymInst.cs" />
+    <Compile Include="SymServer.cs" />
+    <Compile Include="Util.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="blocks.ico" />
+    <Content Include="Data\PwrPlus.db.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Data\RepGen.db.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Libraries\ICSharpCode.TextEditor.dll" />
+    <Content Include="Libraries\WeifenLuo.WinFormsUI.Docking.dll" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\PwrPlus\PwrPlus.csproj">
+      <Project>{71F3957E-0C7D-4214-B87A-C4F2D1308232}</Project>
+      <Name>PwrPlus</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Symitar\Symitar.csproj">
+      <Project>{3EC60B99-DCC6-4C15-B14C-DD49B1DFD215}</Project>
+      <Name>Symitar</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
