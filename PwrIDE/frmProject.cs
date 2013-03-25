@@ -572,6 +572,8 @@ namespace PwrIDE
       Project prj = new Project();
       ProjectFile file = ProjectFileFromNode(treeProj.SelectedNode, ref prj);
       InputBox inp = new InputBox("Rename File", "Enter New Filename", file.Name, false);
+      inp.MaxLength = 31;
+      
       if(inp.ShowDialog(Util.MainForm) == DialogResult.Cancel)
       {
         inp.Dispose();

@@ -22,6 +22,11 @@ namespace System.Windows.Forms
     }
     //========================================================================
     public string Input { get { return txtInput.Text; } }
+    public int MaxLength
+    {
+      get { return txtInput.MaxLength; }
+      set { txtInput.MaxLength = value; }
+    }
     //========================================================================
     private void txtInput_KeyPress(object sender, KeyPressEventArgs e)
     {
