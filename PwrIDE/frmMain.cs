@@ -613,7 +613,8 @@ namespace PwrIDE
     //------------------------------------------------------------------------
     private void mnuHelpHelp_Click(object sender, EventArgs e)
     {
-      MessageBox.Show("Sorry... Helpfile not yet available!", "PwrIDE", MessageBoxButtons.OK, MessageBoxIcon.Information);
+      //MessageBox.Show("Sorry... Helpfile not yet available!", "PwrIDE", MessageBoxButtons.OK, MessageBoxIcon.Information);
+      Util.ShowEDocs();
     }
     //------------------------------------------------------------------------
     private void mnuHelpAbout_Click(object sender, EventArgs e)

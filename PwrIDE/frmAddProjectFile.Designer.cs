@@ -40,6 +40,7 @@
       // txtFilename
       // 
       this.txtFilename.Location = new System.Drawing.Point(12, 25);
+      this.txtFilename.MaxLength = 31;
       this.txtFilename.Name = "txtFilename";
       this.txtFilename.Size = new System.Drawing.Size(264, 20);
       this.txtFilename.TabIndex = 0;
@@ -53,7 +54,6 @@
       this.comboType.FormattingEnabled = true;
       this.comboType.Items.AddRange(new object[] {
             "RepGen",
-            "PowerPlus",
             "Letterfile"});
       this.comboType.Location = new System.Drawing.Point(291, 24);
       this.comboType.Name = "comboType";

@@ -29,30 +29,16 @@
     private void InitializeComponent()
     {
       System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmFileNew));
-      this.lblPwr = new System.Windows.Forms.Label();
       this.lblRep = new System.Windows.Forms.Label();
       this.lblLtr = new System.Windows.Forms.Label();
       this.SuspendLayout();
-      // 
-      // lblPwr
-      // 
-      this.lblPwr.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-      this.lblPwr.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-      this.lblPwr.Image = ((System.Drawing.Image)(resources.GetObject("lblPwr.Image")));
-      this.lblPwr.Location = new System.Drawing.Point(12, 9);
-      this.lblPwr.Name = "lblPwr";
-      this.lblPwr.Size = new System.Drawing.Size(67, 65);
-      this.lblPwr.TabIndex = 3;
-      this.lblPwr.Text = "PwrPlus";
-      this.lblPwr.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-      this.lblPwr.Click += new System.EventHandler(this.lblPwr_Click);
       // 
       // lblRep
       // 
       this.lblRep.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
       this.lblRep.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
       this.lblRep.Image = ((System.Drawing.Image)(resources.GetObject("lblRep.Image")));
-      this.lblRep.Location = new System.Drawing.Point(94, 9);
+      this.lblRep.Location = new System.Drawing.Point(12, 9);
       this.lblRep.Name = "lblRep";
       this.lblRep.Size = new System.Drawing.Size(67, 65);
       this.lblRep.TabIndex = 4;
@@ -65,7 +51,7 @@
       this.lblLtr.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
       this.lblLtr.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
       this.lblLtr.Image = ((System.Drawing.Image)(resources.GetObject("lblLtr.Image")));
-      this.lblLtr.Location = new System.Drawing.Point(177, 9);
+      this.lblLtr.Location = new System.Drawing.Point(95, 9);
       this.lblLtr.Name = "lblLtr";
       this.lblLtr.Size = new System.Drawing.Size(67, 65);
       this.lblLtr.TabIndex = 5;
@@ -77,10 +63,9 @@
       // 
       this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-      this.ClientSize = new System.Drawing.Size(256, 83);
+      this.ClientSize = new System.Drawing.Size(173, 83);
       this.Controls.Add(this.lblLtr);
       this.Controls.Add(this.lblRep);
-      this.Controls.Add(this.lblPwr);
       this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
       this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
       this.MaximizeBox = false;
@@ -95,7 +80,6 @@
 
     #endregion
 
-    private System.Windows.Forms.Label lblPwr;
     private System.Windows.Forms.Label lblRep;
     private System.Windows.Forms.Label lblLtr;
   }

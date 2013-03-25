@@ -260,11 +260,15 @@ namespace PwrIDE
         SymInst inst = SymFromNode(treeProj.SelectedNode);
         if(Util.TrySymConnect(inst))
           PopulateSym(treeProj.SelectedNode, inst);
+        treeProj.SelectedNode.NodeFont = new System.Drawing.Font(treeProj.Font, System.Drawing.FontStyle.Bold);
+        treeProj.SelectedNode.Text = treeProj.SelectedNode.Text;
       }
       else
       {
         SymFromNode(treeProj.SelectedNode).Disconnect();
         treeProj.SelectedNode.Nodes.Clear();
+        treeProj.SelectedNode.NodeFont = new System.Drawing.Font(treeProj.Font, System.Drawing.FontStyle.Regular);
+        treeProj.SelectedNode.Text = treeProj.SelectedNode.Text;
       }
     }
     //------------------------------------------------------------------------
@@ -1267,7 +1271,7 @@ namespace PwrIDE
     //------------------------------------------------------------------------
     private void PopulateSym(TreeNode node, SymInst inst)
     {
-      node.Nodes.Clear();
+      node.Nodes.Clear(); 
 
       //load projects
       try

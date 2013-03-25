@@ -4,6 +4,7 @@ using System.Text;
 using System.Windows.Forms;
 using System.Collections.Generic;
 using System.Text.RegularExpressions;
+using System.Runtime.InteropServices;
 using Symitar;
 
 namespace PwrIDE
@@ -264,5 +265,24 @@ namespace PwrIDE
       return ProjectFile.FileType.LETTER;
     }
     //========================================================================
+    private static uint HH_DISPLAY_TOPIC  =  0;
+    private static uint HH_DISPLAY_TOC    =  1;
+    private static uint HH_DISPLAY_INDEX  =  2;
+    private static uint HH_DISPLAY_SEARCH =  3;
+    private static uint HH_KEYWORD_LOOKUP = 13;
+    private static uint HH_HELP_CONTEXT   = 15;
+    private static uint HH_CLOSE_ALL      = 18;
+    [DllImport("hhctrl.ocx")] private static extern IntPtr HtmlHelp(IntPtr hwnd, string file, UInt32 command, IntPtr data);
+    public static void ShowEDocs()
+    {
+      //TODO: allow some way of specifying an alternate file; this really shouldn't be hard-coded...
+      if(File.Exists("C:\\ProgramData\\Jack Henry and Associates\\Episys For Windows\\Documentation\\Symitar\\eDocs.chm"))
+        HtmlHelp(IntPtr.Zero, "C:\\ProgramData\\Jack Henry and Associates\\Episys For Windows\\Documentation\\Symitar\\eDocs.chm", HH_DISPLAY_TOPIC, IntPtr.Zero); 
+    }
+    public static void SearchEDocs()
+    {
+
+    }
+
   }
 }

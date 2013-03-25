@@ -48,7 +48,6 @@
       this.stripMenu = new System.Windows.Forms.MenuStrip();
       this.mnuFile = new System.Windows.Forms.ToolStripMenuItem();
       this.mnuFileNew = new System.Windows.Forms.ToolStripMenuItem();
-      this.mnuFileNewPwr = new System.Windows.Forms.ToolStripMenuItem();
       this.mnuFileNewRep = new System.Windows.Forms.ToolStripMenuItem();
       this.mnuFileNewLtr = new System.Windows.Forms.ToolStripMenuItem();
       this.mnuFileOpen = new System.Windows.Forms.ToolStripMenuItem();
@@ -87,8 +86,6 @@
       this.mnuEditFoldCollapse = new System.Windows.Forms.ToolStripMenuItem();
       this.mnuEditGoto = new System.Windows.Forms.ToolStripMenuItem();
       this.mnuUtil = new System.Windows.Forms.ToolStripMenuItem();
-      this.mnuUtilCompile = new System.Windows.Forms.ToolStripMenuItem();
-      this.toolStripMenuItem5 = new System.Windows.Forms.ToolStripSeparator();
       this.mnuUtilCheck = new System.Windows.Forms.ToolStripMenuItem();
       this.mnuUtilInstall = new System.Windows.Forms.ToolStripMenuItem();
       this.mnuUtilRun = new System.Windows.Forms.ToolStripMenuItem();
@@ -137,7 +134,6 @@
       this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
       this.toolFind = new System.Windows.Forms.ToolStripButton();
       this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
-      this.toolCompile = new System.Windows.Forms.ToolStripButton();
       this.toolCheck = new System.Windows.Forms.ToolStripButton();
       this.toolInstall = new System.Windows.Forms.ToolStripButton();
       this.toolRun = new System.Windows.Forms.ToolStripButton();
@@ -197,7 +193,6 @@
       // mnuFileNew
       // 
       this.mnuFileNew.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.mnuFileNewPwr,
             this.mnuFileNewRep,
             this.mnuFileNewLtr});
       this.mnuFileNew.Image = ((System.Drawing.Image)(resources.GetObject("mnuFileNew.Image")));
@@ -205,19 +200,11 @@
       this.mnuFileNew.Size = new System.Drawing.Size(187, 22);
       this.mnuFileNew.Text = "&New";
       // 
-      // mnuFileNewPwr
-      // 
-      this.mnuFileNewPwr.Image = ((System.Drawing.Image)(resources.GetObject("mnuFileNewPwr.Image")));
-      this.mnuFileNewPwr.Name = "mnuFileNewPwr";
-      this.mnuFileNewPwr.Size = new System.Drawing.Size(137, 22);
-      this.mnuFileNewPwr.Text = "&PwrPlus File";
-      this.mnuFileNewPwr.Click += new System.EventHandler(this.mnuFileNewPwr_Click);
-      // 
       // mnuFileNewRep
       // 
       this.mnuFileNewRep.Image = ((System.Drawing.Image)(resources.GetObject("mnuFileNewRep.Image")));
       this.mnuFileNewRep.Name = "mnuFileNewRep";
-      this.mnuFileNewRep.Size = new System.Drawing.Size(137, 22);
+      this.mnuFileNewRep.Size = new System.Drawing.Size(136, 22);
       this.mnuFileNewRep.Text = "&RepGen File";
       this.mnuFileNewRep.Click += new System.EventHandler(this.mnuFileNewRep_Click);
       // 
@@ -225,7 +212,7 @@
       // 
       this.mnuFileNewLtr.Image = ((System.Drawing.Image)(resources.GetObject("mnuFileNewLtr.Image")));
       this.mnuFileNewLtr.Name = "mnuFileNewLtr";
-      this.mnuFileNewLtr.Size = new System.Drawing.Size(137, 22);
+      this.mnuFileNewLtr.Size = new System.Drawing.Size(136, 22);
       this.mnuFileNewLtr.Text = "&Letter File";
       this.mnuFileNewLtr.Click += new System.EventHandler(this.mnuFileNewLtr_Click);
       // 
@@ -530,8 +517,6 @@
       // mnuUtil
       // 
       this.mnuUtil.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.mnuUtilCompile,
-            this.toolStripMenuItem5,
             this.mnuUtilCheck,
             this.mnuUtilInstall,
             this.mnuUtilRun,
@@ -540,20 +525,6 @@
       this.mnuUtil.Name = "mnuUtil";
       this.mnuUtil.Size = new System.Drawing.Size(37, 20);
       this.mnuUtil.Text = "&Util";
-      // 
-      // mnuUtilCompile
-      // 
-      this.mnuUtilCompile.Image = ((System.Drawing.Image)(resources.GetObject("mnuUtilCompile.Image")));
-      this.mnuUtilCompile.Name = "mnuUtilCompile";
-      this.mnuUtilCompile.ShortcutKeys = System.Windows.Forms.Keys.F5;
-      this.mnuUtilCompile.Size = new System.Drawing.Size(211, 22);
-      this.mnuUtilCompile.Text = "&Compile";
-      this.mnuUtilCompile.Click += new System.EventHandler(this.mnuUtilCompile_Click);
-      // 
-      // toolStripMenuItem5
-      // 
-      this.toolStripMenuItem5.Name = "toolStripMenuItem5";
-      this.toolStripMenuItem5.Size = new System.Drawing.Size(208, 6);
       // 
       // mnuUtilCheck
       // 
@@ -709,20 +680,20 @@
       this.mnuHelpHelp.Image = ((System.Drawing.Image)(resources.GetObject("mnuHelpHelp.Image")));
       this.mnuHelpHelp.Name = "mnuHelpHelp";
       this.mnuHelpHelp.ShortcutKeys = System.Windows.Forms.Keys.F1;
-      this.mnuHelpHelp.Size = new System.Drawing.Size(118, 22);
+      this.mnuHelpHelp.Size = new System.Drawing.Size(152, 22);
       this.mnuHelpHelp.Text = "&Help";
       this.mnuHelpHelp.Click += new System.EventHandler(this.mnuHelpHelp_Click);
       // 
       // toolStripMenuItem3
       // 
       this.toolStripMenuItem3.Name = "toolStripMenuItem3";
-      this.toolStripMenuItem3.Size = new System.Drawing.Size(115, 6);
+      this.toolStripMenuItem3.Size = new System.Drawing.Size(149, 6);
       // 
       // mnuHelpAbout
       // 
       this.mnuHelpAbout.Image = ((System.Drawing.Image)(resources.GetObject("mnuHelpAbout.Image")));
       this.mnuHelpAbout.Name = "mnuHelpAbout";
-      this.mnuHelpAbout.Size = new System.Drawing.Size(118, 22);
+      this.mnuHelpAbout.Size = new System.Drawing.Size(152, 22);
       this.mnuHelpAbout.Text = "&About";
       this.mnuHelpAbout.Click += new System.EventHandler(this.mnuHelpAbout_Click);
       // 
@@ -799,7 +770,6 @@
             this.toolStripSeparator4,
             this.toolFind,
             this.toolStripSeparator5,
-            this.toolCompile,
             this.toolCheck,
             this.toolInstall,
             this.toolRun,
@@ -1003,17 +973,6 @@
       this.toolStripSeparator5.Name = "toolStripSeparator5";
       this.toolStripSeparator5.Size = new System.Drawing.Size(6, 25);
       // 
-      // toolCompile
-      // 
-      this.toolCompile.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-      this.toolCompile.Image = ((System.Drawing.Image)(resources.GetObject("toolCompile.Image")));
-      this.toolCompile.ImageTransparentColor = System.Drawing.Color.Magenta;
-      this.toolCompile.Name = "toolCompile";
-      this.toolCompile.Size = new System.Drawing.Size(23, 22);
-      this.toolCompile.Text = "toolStripButton4";
-      this.toolCompile.ToolTipText = "Compile";
-      this.toolCompile.Click += new System.EventHandler(this.mnuUtilCompile_Click);
-      // 
       // toolCheck
       // 
       this.toolCheck.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
@@ -1133,7 +1092,7 @@
       this.toolVersionAdd.Image = ((System.Drawing.Image)(resources.GetObject("toolVersionAdd.Image")));
       this.toolVersionAdd.ImageTransparentColor = System.Drawing.Color.Magenta;
       this.toolVersionAdd.Name = "toolVersionAdd";
-      this.toolVersionAdd.Size = new System.Drawing.Size(23, 24);
+      this.toolVersionAdd.Size = new System.Drawing.Size(23, 22);
       this.toolVersionAdd.Text = "toolStripButton2";
       this.toolVersionAdd.ToolTipText = "Add";
       this.toolVersionAdd.Visible = false;
@@ -1304,7 +1263,6 @@
     private System.Windows.Forms.ToolStripButton toolSave;
     private System.Windows.Forms.ToolStripButton toolSaveAll;
     private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
-    private System.Windows.Forms.ToolStripButton toolCompile;
     private System.Windows.Forms.ToolStripButton toolCheck;
     private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
     private System.Windows.Forms.ToolStripButton toolHelp;
@@ -1318,19 +1276,16 @@
     private System.Windows.Forms.ToolStripMenuItem mnuHelpHelp;
     private System.Windows.Forms.ToolStripSeparator toolStripMenuItem3;
     private System.Windows.Forms.ToolStripMenuItem mnuHelpAbout;
-    private System.Windows.Forms.ToolStripMenuItem mnuFileNewPwr;
     private System.Windows.Forms.ToolStripMenuItem mnuFileNewRep;
     private System.Windows.Forms.ToolStripMenuItem mnuFileNewLtr;
     private System.Windows.Forms.ToolStripMenuItem mnuFileOpenSym;
     private System.Windows.Forms.ToolStripMenuItem mnuFileOpenLocal;
     private System.Windows.Forms.ToolStripMenuItem mnuFileSaveAsSym;
     private System.Windows.Forms.ToolStripMenuItem mnuFileSaveAsLocal;
-    private System.Windows.Forms.ToolStripMenuItem mnuUtilCompile;
     private System.Windows.Forms.ToolStripMenuItem mnuUtilCheck;
     private System.Windows.Forms.ToolStripDropDownButton toolOpen;
     private System.Windows.Forms.ToolStripMenuItem ToolOpenSym;
     private System.Windows.Forms.ToolStripMenuItem toolOpenLocal;
-    private System.Windows.Forms.ToolStripSeparator toolStripMenuItem5;
     private System.Windows.Forms.ToolStripMenuItem mnuUtilInstall;
     private System.Windows.Forms.ToolStripMenuItem mnuUtilRun;
     private System.Windows.Forms.ToolStripMenuItem mnuEditUndo;
