@@ -30,6 +30,8 @@ namespace PwrIDE
       data.Add("Window_Left"     , "0");
       data.Add("Window_Maximized", "False");
 
+      data.Add("Help_File", "C:\\ProgramData\\Jack Henry and Associates\\Episys For Windows\\Documentation\\Symitar\\eDocs.chm");
+
       data.Add("Explorer_State" , "DockRightAutoHide");
       data.Add("Explorer_Size"  , "320");
       data.Add("Errors_State"   , "DockBottomAutoHide");
@@ -51,19 +53,7 @@ namespace PwrIDE
       data.Add("Editor_RepGen_Spaces"   , "True");
       data.Add("Editor_RepGen_Highlight", "False");
 
-      data.Add("Editor_PwrPls_Font"     , "Courier New");
-      data.Add("Editor_PwrPls_Size"     , "8.5");
-      data.Add("Editor_PwrPls_Tabs"     , "2");
-      data.Add("Editor_PwrPls_Spaces"   , "True");
-      data.Add("Editor_PwrPls_Highlight", "False");
-
       string[] SyntaxTypes = new string[] {"BuiltIns", "Comment", "Control", "DataType", "Date", "Digits", "Include", "Logic", "Punctuation", "Fields", "Section", "String", "SysVar"};
-      foreach(string str in SyntaxTypes)
-      {
-        data.Add("Editor_PwrPls_" + str + "_Bold"  , "False");
-        data.Add("Editor_PwrPls_" + str + "_Italic", "False");
-        data.Add("Editor_PwrPls_" + str + "_Color" , "0,0,0");
-      }
       foreach(string str in SyntaxTypes)
       {
         data.Add("Editor_RepGen_" + str + "_Bold"  , "False");

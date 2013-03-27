@@ -275,9 +275,9 @@ namespace PwrIDE
     [DllImport("hhctrl.ocx")] private static extern IntPtr HtmlHelp(IntPtr hwnd, string file, UInt32 command, IntPtr data);
     public static void ShowEDocs()
     {
-      //TODO: allow some way of specifying an alternate file; this really shouldn't be hard-coded...
-      if(File.Exists("C:\\ProgramData\\Jack Henry and Associates\\Episys For Windows\\Documentation\\Symitar\\eDocs.chm"))
-        HtmlHelp(IntPtr.Zero, "C:\\ProgramData\\Jack Henry and Associates\\Episys For Windows\\Documentation\\Symitar\\eDocs.chm", HH_DISPLAY_TOPIC, IntPtr.Zero); 
+      string helpFile = Config.GetString("Help_File");
+      if(File.Exists(helpFile))
+        HtmlHelp(IntPtr.Zero, helpFile, HH_DISPLAY_TOPIC, IntPtr.Zero);
     }
     public static void SearchEDocs()
     {
