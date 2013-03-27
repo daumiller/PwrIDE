@@ -9,7 +9,6 @@ namespace Symitar
 		public enum Type
 		{
 			REPGEN = 0,
-      PWRPLS = 0,
 			LETTER = 1,
 			HELP   = 2,
 			REPORT = 3

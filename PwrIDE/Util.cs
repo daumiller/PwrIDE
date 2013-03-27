@@ -256,12 +256,7 @@ namespace PwrIDE
     public static ProjectFile.FileType GetSymProjectFileType(SymFile file) //this is here so we don't have to reference PwrIDE from Symitar
     {
       if(file.type == SymFile.Type.REPGEN)
-      {
-        if(file.name.Substring(file.name.LastIndexOf('.') + 1).ToUpper() == "PWR")
-          return ProjectFile.FileType.PWRPLS;
-        else
-          return ProjectFile.FileType.REPGEN;
-      }
+        return ProjectFile.FileType.REPGEN;
       return ProjectFile.FileType.LETTER;
     }
     //========================================================================

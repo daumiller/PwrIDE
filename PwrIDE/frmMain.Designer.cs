@@ -836,14 +836,6 @@
       this.toolNew.Text = "toolNew";
       this.toolNew.ToolTipText = "New";
       // 
-      // toolNewPwr
-      // 
-      this.toolNewPwr.Image = ((System.Drawing.Image)(resources.GetObject("toolNewPwr.Image")));
-      this.toolNewPwr.Name = "toolNewPwr";
-      this.toolNewPwr.Size = new System.Drawing.Size(116, 22);
-      this.toolNewPwr.Text = "PwrPlus";
-      this.toolNewPwr.Click += new System.EventHandler(this.mnuFileNewPwr_Click);
-      // 
       // toolNewRep
       // 
       this.toolNewRep.Image = ((System.Drawing.Image)(resources.GetObject("toolNewRep.Image")));

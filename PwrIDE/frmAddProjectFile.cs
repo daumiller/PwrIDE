@@ -42,12 +42,7 @@ namespace PwrIDE
     private void btnOkay_Click(object sender, EventArgs e)
     {
       FileName = txtFilename.Text;
-      if ((string)comboType.SelectedItem == "PowerPlus")
-      {
-        FileType = ProjectFile.FileType.PWRPLS;
-        SymFileType = Symitar.SymFile.Type.PWRPLS;
-      }
-      else if ((string)comboType.SelectedItem == "RepGen")
+      if ((string)comboType.SelectedItem == "RepGen")
       {
         FileType = ProjectFile.FileType.REPGEN;
         SymFileType = Symitar.SymFile.Type.REPGEN;

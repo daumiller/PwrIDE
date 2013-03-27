@@ -207,13 +207,6 @@ namespace PwrIDE
       if (ActiveSource != null) ActiveSource.icsEditor.Focus();
     }
     //------------------------------------------------------------------------
-    public void mnuFileNewPwr_Click(object sender, EventArgs e)
-    {
-      frmSource src = new frmSource(ProjectFile.FileType.PWRPLS);
-      src.Show(dockPanel);
-      src.icsEditor.Focus();
-    }
-    //------------------------------------------------------------------------
     public void mnuFileNewRep_Click(object sender, EventArgs e)
     {
       frmSource src = new frmSource(ProjectFile.FileType.REPGEN);
@@ -242,7 +235,7 @@ namespace PwrIDE
     {
       OpenFileDialog ofd = new OpenFileDialog();
       ofd.Multiselect = true;
-      ofd.Filter = "PwrPlus Files (*.pwr)|*.pwr|RepGen Files (*.rep)|*.rep|Letterfiles (*.ltr)|*.ltr|All Files|*.*";
+      ofd.Filter = "RepGen Files (*.rep)|*.rep|Letterfiles (*.ltr)|*.ltr|All Files|*.*";
       if (ofd.ShowDialog(this) == DialogResult.OK)
       {
         for (int i = 0; i < ofd.FileNames.Length; i++)

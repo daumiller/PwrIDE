@@ -69,13 +69,6 @@ namespace PwrIDE
         folder    = new RepGenFold();
         icsEditor.Document.FoldingManager.FoldingStrategy = folder;
       }
-      if(type == ProjectFile.FileType.PWRPLS)
-      {
-        icsEditor.SetHighlighting("PwrPlus");
-        completer = new PwrPlusComplete();
-        folder    = new PwrPlusFold();
-        icsEditor.Document.FoldingManager.FoldingStrategy = folder;
-      }
       Controls.Add(icsEditor);
 
       DockAreas = DockAreas.Document;
@@ -231,7 +224,6 @@ namespace PwrIDE
       if (lastDot == -1)
         return ProjectFile.FileType.REPGEN;
       string extension = file.name.Substring(lastDot + 1);
-      if (extension.ToUpper() == "PWR") return ProjectFile.FileType.PWRPLS;
       return ProjectFile.FileType.REPGEN;
     }
     //------------------------------------------------------------------------
@@ -241,14 +233,12 @@ namespace PwrIDE
       if(lastDot == -1)
         return ProjectFile.FileType.LETTER;
       string extension = NameOrPath.Substring(lastDot+1);
-      if(extension.ToUpper() == "PWR") return ProjectFile.FileType.PWRPLS;
       if(extension.ToUpper() == "REP") return ProjectFile.FileType.REPGEN;
-        return ProjectFile.FileType.LETTER;
+      return ProjectFile.FileType.LETTER;
     }
     //------------------------------------------------------------------------
     private string ExtensionFromType(ProjectFile.FileType type)
     {
-      if(type == ProjectFile.FileType.PWRPLS) return ".PWR";
       if(type == ProjectFile.FileType.REPGEN) return ".REP";
       if(type == ProjectFile.FileType.LETTER) return ".LTR";
       return "";
@@ -256,7 +246,6 @@ namespace PwrIDE
     //------------------------------------------------------------------------
     private System.Drawing.Icon IconFromType(ProjectFile.FileType type)
     {
-      if(type == ProjectFile.FileType.PWRPLS) return Icon.FromHandle(((Bitmap)icons.Images["PWR"]).GetHicon());
       if(type == ProjectFile.FileType.REPGEN) return Icon.FromHandle(((Bitmap)icons.Images["REP"]).GetHicon());
       if(type == ProjectFile.FileType.LETTER) return Icon.FromHandle(((Bitmap)icons.Images["LTR"]).GetHicon());
       throw new Exception("IconFromType: Undefined ProjectFile.FileType Passed\nThis Shouldn't Happen");
@@ -603,20 +592,12 @@ namespace PwrIDE
         {
           fileOrigin = Origin.SYM;
           fileType   = FileTypeFromSymFile(fileSym);
-          if(fileSym.name.Substring(fileSym.name.LastIndexOf('.')+1).ToUpper()=="PWR") fileType = ProjectFile.FileType.PWRPLS;
           Icon       = IconFromType(fileType);
           if(fileType == ProjectFile.FileType.REPGEN)
 		      {
 		        icsEditor.SetHighlighting("RepGen");
 		        completer = new RepGenComplete();
 		        folder    = new RepGenFold();
-		        icsEditor.Document.FoldingManager.FoldingStrategy = folder;
-		      }
-		      else if(fileType == ProjectFile.FileType.PWRPLS)
-		      {
-		        icsEditor.SetHighlighting("PwrPlus");
-		        completer = new PwrPlusComplete();
-		        folder    = new PwrPlusFold();
 		        icsEditor.Document.FoldingManager.FoldingStrategy = folder;
 		      }
 		      else if(fileType == ProjectFile.FileType.LETTER)
@@ -653,13 +634,6 @@ namespace PwrIDE
 		        icsEditor.SetHighlighting("RepGen");
 		        completer = new RepGenComplete();
 		        folder    = new RepGenFold();
-		        icsEditor.Document.FoldingManager.FoldingStrategy = folder;
-		      }
-		      else if(fileType == ProjectFile.FileType.PWRPLS)
-		      {
-		        icsEditor.SetHighlighting("PwrPlus");
-		        completer = new PwrPlusComplete();
-		        folder    = new PwrPlusFold();
 		        icsEditor.Document.FoldingManager.FoldingStrategy = folder;
 		      }
 		      else if(fileType == ProjectFile.FileType.LETTER)
@@ -706,7 +680,7 @@ namespace PwrIDE
 
       if((completer != null) && (e.Text != null))
       {
-        if(((fileType == ProjectFile.FileType.REPGEN) && (e.Text==":")) || ((fileType == ProjectFile.FileType.PWRPLS) && (e.Text==".")))
+        if((fileType == ProjectFile.FileType.REPGEN) && (e.Text==":"))
         {
           ICSharpCode.TextEditor.Gui.CompletionWindow.CodeCompletionWindow.ShowCompletionWindow(this,icsEditor,"filename",completer, e.Text[0]);
           icsEditor.Refresh();
@@ -726,20 +700,6 @@ namespace PwrIDE
         //Comments (can easily effect blocking)
         if((fileType == ProjectFile.FileType.REPGEN) && (e.Text != null) && (e.Text.Length == 1))
           if((e.Text == "[") || (e.Text == "]"))
-          {
-        		UpdateFoldings();
-        		return;
-        	}
-        if((fileType == ProjectFile.FileType.PWRPLS) && (e.Text != null) && (e.Text.Length == 1))
-          if((e.Text == "/") || (e.Text == "*"))
-          {
-        		UpdateFoldings();
-        		return;
-        	}
-        
-        //Quick-Detect PowerPlus Blocks
-        if((fileType == ProjectFile.FileType.PWRPLS) && (e.Text != null) && (e.Text.Length == 1))
-          if((e.Text == "}") || (e.Text == "{"))
           {
         		UpdateFoldings();
         		return;
@@ -863,8 +823,7 @@ namespace PwrIDE
     private void UpdateSyntax()
     {
       string prefix = "Editor_Letter_";
-           if(fileType == ProjectFile.FileType.REPGEN) prefix = "Editor_RepGen_";
-      else if(fileType == ProjectFile.FileType.PWRPLS) prefix = "Editor_PwrPls_";
+      if(fileType == ProjectFile.FileType.REPGEN) prefix = "Editor_RepGen_";
 
       icsEditor.Font = new Font(Config.GetString(prefix+"Font"), Config.GetFloat(prefix+"Size"));
       icsEditor.TabIndent = icsEditor.Document.TextEditorProperties.IndentationSize = Config.GetInt(prefix + "Tabs");

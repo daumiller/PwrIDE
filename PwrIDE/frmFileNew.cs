@@ -18,11 +18,6 @@ namespace PwrIDE
         DialogResult = DialogResult.Cancel;
     }
     //========================================================================
-    private void lblPwr_Click(object sender, EventArgs e)
-    {
-      Util.MainForm.mnuFileNewPwr_Click(sender, e);
-      DialogResult = DialogResult.OK;
-    }
     private void lblRep_Click(object sender, EventArgs e)
     {
       Util.MainForm.mnuFileNewRep_Click(sender, e);

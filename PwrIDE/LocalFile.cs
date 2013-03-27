@@ -11,7 +11,7 @@ namespace PwrIDE
 		public string       name = "";
 		public DateTime     date = DateTime.Now;
 		public int          size = 0;
-		public SymFile.Type type = SymFile.Type.PWRPLS;
+		public SymFile.Type type = SymFile.Type.REPGEN;
     //========================================================================
     public LocalFile()
     {
@@ -24,9 +24,8 @@ namespace PwrIDE
       name = nfo.Name;
       date = nfo.LastWriteTime;
       size = (int)nfo.Length;
-           if(name.Substring(name.LastIndexOf('.')+1).ToUpper() == "PWR") type = SymFile.Type.PWRPLS;
-      else if(name.Substring(name.LastIndexOf('.')+1).ToUpper() == "REP") type = SymFile.Type.REPGEN;
-      else                                                                type = SymFile.Type.LETTER;
+      if(name.Substring(name.LastIndexOf('.')+1).ToUpper() == "REP") type = SymFile.Type.REPGEN;
+      else                                                           type = SymFile.Type.LETTER;
     }
     //------------------------------------------------------------------------
     public LocalFile(string Name, string Date, string Time, int Size, SymFile.Type Type)
@@ -66,12 +65,7 @@ namespace PwrIDE
     public ProjectFile.FileType GetProjectFileType()
     {
       if(type == SymFile.Type.REPGEN)
-      {
-        if(name.Substring(name.LastIndexOf('.')+1).ToUpper() == "PWR")
-          return ProjectFile.FileType.PWRPLS;
-        else
-          return ProjectFile.FileType.REPGEN;
-      }
+        return ProjectFile.FileType.REPGEN;
       return ProjectFile.FileType.LETTER;
     }
     //========================================================================

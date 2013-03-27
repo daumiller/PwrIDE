@@ -246,8 +246,6 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <Compile Include="PwrPlusComplete.cs" />
-    <Compile Include="PwrPlusFold.cs" />
     <Compile Include="RepGenComplete.cs" />
     <Compile Include="RepGenFold.cs" />
     <Compile Include="SkinColorTable.cs" />

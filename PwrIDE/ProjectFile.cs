@@ -12,9 +12,9 @@ namespace PwrIDE
     //========================================================================
     public enum FileType
     {
-      PWRPLS = 0,
-      REPGEN = 1,
-      LETTER = 2
+      INVALID = 0,
+      REPGEN  = 1,
+      LETTER  = 2
     }
     //------------------------------------------------------------------------
     public SymFile.Type TypeConvert()

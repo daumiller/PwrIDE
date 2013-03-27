@@ -91,7 +91,7 @@ namespace PwrIDE
       string contents;
       try
       {
-        contents = Util.FileReadSym(this, "pwrpls."+GetUserNumber()+"projects",SymFile.Type.LETTER);
+        contents = Util.FileReadSym(this, "pwrpls."+GetUserNumber()+"projects",SymFile.Type.LETTER); //would like to s/pwrpls/pwride here, but now it's too late...
         if(contents.Length >= 0) contents=contents.Replace("\n","\r\n");
       }
       catch(FileNotFoundException)
@@ -145,7 +145,7 @@ namespace PwrIDE
       for (int i = 0; i < Projects.Count; i++)
         outp.Append(Projects[i].Write());
       outp.Append('\n');
-      Util.FileWriteSym(this, "pwrpls." + GetUserNumber() + "projects", SymFile.Type.LETTER, outp.ToString());
+      Util.FileWriteSym(this, "pwrpls." + GetUserNumber() + "projects", SymFile.Type.LETTER, outp.ToString()); //would like to s/pwrpls/pwride here, but now it's too late...
     }
     //------------------------------------------------------------------------
     public void ProjectAdd(Project prj)

@@ -181,8 +181,8 @@ namespace PwrIDE
 
       frmAddProjectFile    fapf        = new frmAddProjectFile();
       string               fileName    = "";
-      ProjectFile.FileType fileType    = ProjectFile.FileType.PWRPLS;
-      SymFile.Type         fileSymType = SymFile.Type.PWRPLS;
+      ProjectFile.FileType fileType    = ProjectFile.FileType.REPGEN;
+      SymFile.Type         fileSymType = SymFile.Type.REPGEN;
 
       bool exists = true;
       while(exists)
@@ -359,8 +359,8 @@ namespace PwrIDE
       Project prj = ProjectFromNode(treeProj.SelectedNode);
       frmAddProjectFile    fapf        = new frmAddProjectFile();
       string               fileName    = "";
-      ProjectFile.FileType fileType    = ProjectFile.FileType.PWRPLS;
-      SymFile.Type         fileSymType = SymFile.Type.PWRPLS;
+      ProjectFile.FileType fileType    = ProjectFile.FileType.REPGEN;
+      SymFile.Type         fileSymType = SymFile.Type.REPGEN;
 
       bool exists=true;
       while(exists)
@@ -605,8 +605,8 @@ namespace PwrIDE
 
       frmAddProjectFile    fapf        = new frmAddProjectFile();
       string               fileName    = "";
-      ProjectFile.FileType fileType    = ProjectFile.FileType.PWRPLS;
-      SymFile.Type         fileSymType = SymFile.Type.PWRPLS;
+      ProjectFile.FileType fileType    = ProjectFile.FileType.REPGEN;
+      SymFile.Type         fileSymType = SymFile.Type.REPGEN;
 
       bool exists = true;
       while(exists)
@@ -1156,14 +1156,12 @@ namespace PwrIDE
     //------------------------------------------------------------------------
     public int IconIndexFromFileType(ProjectFile.FileType type)
     {
-      if (type == ProjectFile.FileType.PWRPLS) return 3;
       if (type == ProjectFile.FileType.REPGEN) return 4;
       return 5;
     }
     //------------------------------------------------------------------------
     public ProjectFile.FileType FileTypeFromIconIndex(int idx)
     {
-      if(idx==3) return ProjectFile.FileType.PWRPLS;
       if(idx==4) return ProjectFile.FileType.REPGEN;
       return ProjectFile.FileType.LETTER;
     }

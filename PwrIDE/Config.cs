@@ -300,7 +300,6 @@ namespace PwrIDE
     {
       //init intellisense
       RepGenComplete.ImgList  = Util.MainForm.AutoCompleteIcons;
-      PwrPlusComplete.ImgList = Util.MainForm.AutoCompleteIcons;
       string contents;
 
       try
@@ -311,16 +310,6 @@ namespace PwrIDE
       catch(Exception ex)
       {
         MessageBox.Show("Error Loading RepGen Field DB\nAuto-Completion Will Not Be Available.\nError: " + ex.Message, "PwrIDE", MessageBoxButtons.OK, MessageBoxIcon.Error);
-      }
-
-      try
-      {
-        contents = File.ReadAllText(Application.StartupPath+"\\Data\\PwrPlus.db.txt");
-        PwrPlusComplete.LoadRecords(contents);
-      }
-      catch(Exception ex)
-      {
-        MessageBox.Show("Error Loading PowerPlus Field DB\nAuto-Completion Will Not Be Available.\nError: " + ex.Message, "PwrIDE", MessageBoxButtons.OK, MessageBoxIcon.Error);
       }
 
       //init syntax highlighting
@@ -335,15 +324,10 @@ namespace PwrIDE
     //------------------------------------------------------------------------
     public static void UpdateSyntax()
     {
-      string path = Application.StartupPath + "\\Data\\PwrPlus.xshd";
-
-      if(UpdateSyntaxFile(Application.StartupPath+"\\Data\\PwrPlus.xshd", true))
+      if(UpdateSyntaxFile(Application.StartupPath+"\\Data\\RepGen.xshd", false))
       {
-        if(UpdateSyntaxFile(Application.StartupPath+"\\Data\\RepGen.xshd", false))
-        {
-          HighlightingManager.Manager.ReloadSyntaxModes();
-          NotifyUpdateHandlers();
-        }
+        HighlightingManager.Manager.ReloadSyntaxModes();
+        NotifyUpdateHandlers();
       }
     }
     //------------------------------------------------------------------------
@@ -370,7 +354,7 @@ namespace PwrIDE
       string[] keywords = new string[]{ "Punctuation", "DataType", "Section", "Control", "Logic", "SysVar", "BuiltIns", "Fields" };
 
       string b, i, c;
-      string prefix = isPower ? "Editor_PwrPls_" : "Editor_RepGen_";
+      string prefix = "Editor_RepGen_";
       match = digits.Match(content);
       if(match.Success)
       {
