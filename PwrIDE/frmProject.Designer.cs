@@ -64,7 +64,6 @@
       this.mnuProjectRemove = new System.Windows.Forms.ToolStripMenuItem();
       this.mnuProjectDelete = new System.Windows.Forms.ToolStripMenuItem();
       this.mnuFile = new System.Windows.Forms.ContextMenuStrip(this.components);
-      this.mnuFileCompile = new System.Windows.Forms.ToolStripMenuItem();
       this.mnuFileInstall = new System.Windows.Forms.ToolStripMenuItem();
       this.mnuFileRun = new System.Windows.Forms.ToolStripMenuItem();
       this.toolStripMenuItem6 = new System.Windows.Forms.ToolStripSeparator();
@@ -397,7 +396,6 @@
       // mnuFile
       // 
       this.mnuFile.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.mnuFileCompile,
             this.mnuFileInstall,
             this.mnuFileRun,
             this.toolStripMenuItem6,
@@ -406,23 +404,14 @@
             this.mnuFileRemove,
             this.mnuFileDelete});
       this.mnuFile.Name = "mnuFile";
-      this.mnuFile.Size = new System.Drawing.Size(120, 148);
-      // 
-      // mnuFileCompile
-      // 
-      this.mnuFileCompile.Enabled = false;
-      this.mnuFileCompile.Image = ((System.Drawing.Image)(resources.GetObject("mnuFileCompile.Image")));
-      this.mnuFileCompile.Name = "mnuFileCompile";
-      this.mnuFileCompile.Size = new System.Drawing.Size(119, 22);
-      this.mnuFileCompile.Text = "&Compile";
-      this.mnuFileCompile.Click += new System.EventHandler(this.mnuFileCompile_Click);
+      this.mnuFile.Size = new System.Drawing.Size(118, 126);
       // 
       // mnuFileInstall
       // 
       this.mnuFileInstall.Enabled = false;
       this.mnuFileInstall.Image = ((System.Drawing.Image)(resources.GetObject("mnuFileInstall.Image")));
       this.mnuFileInstall.Name = "mnuFileInstall";
-      this.mnuFileInstall.Size = new System.Drawing.Size(119, 22);
+      this.mnuFileInstall.Size = new System.Drawing.Size(117, 22);
       this.mnuFileInstall.Text = "&Install";
       this.mnuFileInstall.Click += new System.EventHandler(this.mnuFileInstall_Click);
       // 
@@ -431,33 +420,33 @@
       this.mnuFileRun.Enabled = false;
       this.mnuFileRun.Image = ((System.Drawing.Image)(resources.GetObject("mnuFileRun.Image")));
       this.mnuFileRun.Name = "mnuFileRun";
-      this.mnuFileRun.Size = new System.Drawing.Size(119, 22);
+      this.mnuFileRun.Size = new System.Drawing.Size(117, 22);
       this.mnuFileRun.Text = "&Run";
       this.mnuFileRun.Click += new System.EventHandler(this.mnuFileRun_Click);
       // 
       // toolStripMenuItem6
       // 
       this.toolStripMenuItem6.Name = "toolStripMenuItem6";
-      this.toolStripMenuItem6.Size = new System.Drawing.Size(116, 6);
+      this.toolStripMenuItem6.Size = new System.Drawing.Size(114, 6);
       // 
       // mnuFileRename
       // 
       this.mnuFileRename.Image = ((System.Drawing.Image)(resources.GetObject("mnuFileRename.Image")));
       this.mnuFileRename.Name = "mnuFileRename";
-      this.mnuFileRename.Size = new System.Drawing.Size(119, 22);
+      this.mnuFileRename.Size = new System.Drawing.Size(117, 22);
       this.mnuFileRename.Text = "Rename";
       this.mnuFileRename.Click += new System.EventHandler(this.mnuFileRename_Click);
       // 
       // toolStripMenuItem7
       // 
       this.toolStripMenuItem7.Name = "toolStripMenuItem7";
-      this.toolStripMenuItem7.Size = new System.Drawing.Size(116, 6);
+      this.toolStripMenuItem7.Size = new System.Drawing.Size(114, 6);
       // 
       // mnuFileRemove
       // 
       this.mnuFileRemove.Image = ((System.Drawing.Image)(resources.GetObject("mnuFileRemove.Image")));
       this.mnuFileRemove.Name = "mnuFileRemove";
-      this.mnuFileRemove.Size = new System.Drawing.Size(119, 22);
+      this.mnuFileRemove.Size = new System.Drawing.Size(117, 22);
       this.mnuFileRemove.Text = "Remove";
       this.mnuFileRemove.Click += new System.EventHandler(this.mnuFileRemove_Click);
       // 
@@ -465,7 +454,7 @@
       // 
       this.mnuFileDelete.Image = ((System.Drawing.Image)(resources.GetObject("mnuFileDelete.Image")));
       this.mnuFileDelete.Name = "mnuFileDelete";
-      this.mnuFileDelete.Size = new System.Drawing.Size(119, 22);
+      this.mnuFileDelete.Size = new System.Drawing.Size(117, 22);
       this.mnuFileDelete.Text = "Delete";
       this.mnuFileDelete.Click += new System.EventHandler(this.mnuFileDelete_Click);
       // 
@@ -601,7 +590,6 @@
     private System.Windows.Forms.ContextMenuStrip mnuFile;
     private System.Windows.Forms.ToolStripMenuItem mnuFileRename;
     private System.Windows.Forms.ToolStripMenuItem mnuFileRemove;
-    private System.Windows.Forms.ToolStripMenuItem mnuFileCompile;
     private System.Windows.Forms.ToolStripMenuItem mnuFileInstall;
     private System.Windows.Forms.ToolStripMenuItem mnuFileRun;
     private System.Windows.Forms.ToolStripSeparator toolStripMenuItem6;

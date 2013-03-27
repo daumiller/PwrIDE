@@ -48,8 +48,7 @@ namespace PwrIDE
       {
         who.BackColor = colorPicker.Color;
         string prefix = "Editor_Letter_";
-             if((string)lstFileType.SelectedItem == "PowerPlus") prefix = "Editor_PwrPls_";
-        else if((string)lstFileType.SelectedItem == "RepGen"   ) prefix = "Editor_RepGen_";
+        if((string)lstFileType.SelectedItem == "RepGen") prefix = "Editor_RepGen_";
         if(prefix == "Editor_Letter_") return;
         prefix += ListToRuleset(lstSyntaxType.Text);
         prefix += "_Color";
@@ -77,7 +76,7 @@ namespace PwrIDE
     private void ReadConfig()
     {
       string a = "Editor_";
-      string[] b = new string[]{ "PwrPls_", "RepGen_", "Letter_" };
+      string[] b = new string[]{ "RepGen_", "Letter_" };
       string[] c = new string[]{ "Font", "Size", "Tabs", "Spaces", "Highlight" };
       string[] d = new string[]{ "BuiltIns_", "Comment_", "Control_", "DataType_", "Date_", "Digits_", "Include_", "Logic_", "Punctuation_", "Fields_", "Section_", "String_", "SysVar_"};
       string[] e = new string[]{ "Color", "Bold", "Italic" };
@@ -104,8 +103,7 @@ namespace PwrIDE
     private void lstFileType_SelectedIndexChanged(object sender, EventArgs e)
     {
       string prefix = "Editor_Letter_";
-           if((string)lstFileType.SelectedItem == "PowerPlus") prefix = "Editor_PwrPls_";
-      else if((string)lstFileType.SelectedItem == "RepGen"   ) prefix = "Editor_RepGen_";
+      if((string)lstFileType.SelectedItem == "RepGen") prefix = "Editor_RepGen_";
       lstFontFamily.Text    = ConfigCache[prefix + "Font"     ];
       lstFontSize.Text      = ConfigCache[prefix + "Size"     ];
       txtTabWidth.Text      = ConfigCache[prefix + "Tabs"     ];
@@ -118,8 +116,7 @@ namespace PwrIDE
     private void lstFontFamily_SelectedIndexChanged(object sender, EventArgs e)
     {
       string prefix = "Editor_Letter_";
-           if((string)lstFileType.SelectedItem == "PowerPlus") prefix = "Editor_PwrPls_";
-      else if((string)lstFileType.SelectedItem == "RepGen"   ) prefix = "Editor_RepGen_";
+      if((string)lstFileType.SelectedItem == "RepGen") prefix = "Editor_RepGen_";
       ConfigCache[prefix + "Font"] = lstFontFamily.Text;
     }
     //------------------------------------------------------------------------
@@ -137,8 +134,7 @@ namespace PwrIDE
       }
 
       string prefix = "Editor_Letter_";
-           if((string)lstFileType.SelectedItem == "PowerPlus") prefix = "Editor_PwrPls_";
-      else if((string)lstFileType.SelectedItem == "RepGen"   ) prefix = "Editor_RepGen_";
+      if((string)lstFileType.SelectedItem == "RepGen") prefix = "Editor_RepGen_";
       ConfigCache[prefix + "Size"] = lstFontSize.Text;
     }
     //------------------------------------------------------------------------
@@ -156,32 +152,28 @@ namespace PwrIDE
       }
 
       string prefix = "Editor_Letter_";
-           if((string)lstFileType.SelectedItem == "PowerPlus") prefix = "Editor_PwrPls_";
-      else if((string)lstFileType.SelectedItem == "RepGen"   ) prefix = "Editor_RepGen_";
+      if((string)lstFileType.SelectedItem == "RepGen") prefix = "Editor_RepGen_";
       ConfigCache[prefix + "Tabs"] = txtTabWidth.Text;
     }
     //------------------------------------------------------------------------
     private void chkTabSpaces_CheckedChanged(object sender, EventArgs e)
     {
       string prefix = "Editor_Letter_";
-           if((string)lstFileType.SelectedItem == "PowerPlus") prefix = "Editor_PwrPls_";
-      else if((string)lstFileType.SelectedItem == "RepGen"   ) prefix = "Editor_RepGen_";
+      if((string)lstFileType.SelectedItem == "RepGen") prefix = "Editor_RepGen_";
       ConfigCache[prefix + "Spaces"] = chkTabSpaces.Checked.ToString();
     }
     //------------------------------------------------------------------------
     private void chkHighlight_CheckedChanged(object sender, EventArgs e)
     {
       string prefix = "Editor_Letter_";
-           if((string)lstFileType.SelectedItem == "PowerPlus") prefix = "Editor_PwrPls_";
-      else if((string)lstFileType.SelectedItem == "RepGen"   ) prefix = "Editor_RepGen_";
+      if((string)lstFileType.SelectedItem == "RepGen") prefix = "Editor_RepGen_";
       ConfigCache[prefix + "Highlight"] = chkHighlight.Checked.ToString();
     }
     //------------------------------------------------------------------------
     private void lstSyntaxType_SelectedIndexChanged(object sender, EventArgs e)
     {
       string prefix = "Editor_Letter_";
-           if((string)lstFileType.SelectedItem == "PowerPlus") prefix = "Editor_PwrPls_";
-      else if((string)lstFileType.SelectedItem == "RepGen"   ) prefix = "Editor_RepGen_";
+      if((string)lstFileType.SelectedItem == "RepGen") prefix = "Editor_RepGen_";
       
       if(prefix == "Editor_Letter_") return;
       if(lstSyntaxType.Text == "") return;
@@ -196,8 +188,7 @@ namespace PwrIDE
     private void chkBold_CheckStateChanged(object sender, EventArgs e)
     {
       string prefix = "Editor_Letter_";
-           if((string)lstFileType.SelectedItem == "PowerPlus") prefix = "Editor_PwrPls_";
-      else if((string)lstFileType.SelectedItem == "RepGen"   ) prefix = "Editor_RepGen_";
+      if((string)lstFileType.SelectedItem == "RepGen") prefix = "Editor_RepGen_";
       if(prefix == "Editor_Letter_") return;
       prefix += ListToRuleset(lstSyntaxType.Text);
       prefix += "_Bold";
@@ -207,8 +198,7 @@ namespace PwrIDE
     private void chkItalic_CheckStateChanged(object sender, EventArgs e)
     {
       string prefix = "Editor_Letter_";
-           if((string)lstFileType.SelectedItem == "PowerPlus") prefix = "Editor_PwrPls_";
-      else if((string)lstFileType.SelectedItem == "RepGen"   ) prefix = "Editor_RepGen_";
+      if((string)lstFileType.SelectedItem == "RepGen") prefix = "Editor_RepGen_";
       if(prefix == "Editor_Letter_") return;
       prefix += ListToRuleset(lstSyntaxType.Text);
       prefix += "_Italic";

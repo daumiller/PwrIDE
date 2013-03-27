@@ -30,7 +30,6 @@
     {
       System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmAbout));
       this.label1 = new System.Windows.Forms.Label();
-      this.label2 = new System.Windows.Forms.Label();
       this.label3 = new System.Windows.Forms.Label();
       this.label4 = new System.Windows.Forms.Label();
       this.label5 = new System.Windows.Forms.Label();
@@ -50,19 +49,9 @@
       this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
       this.label1.Location = new System.Drawing.Point(96, 21);
       this.label1.Name = "label1";
-      this.label1.Size = new System.Drawing.Size(148, 24);
+      this.label1.Size = new System.Drawing.Size(78, 24);
       this.label1.TabIndex = 0;
-      this.label1.Text = "PowerPlus IDE";
-      // 
-      // label2
-      // 
-      this.label2.AutoSize = true;
-      this.label2.Font = new System.Drawing.Font("Arial Narrow", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.label2.Location = new System.Drawing.Point(169, 45);
-      this.label2.Name = "label2";
-      this.label2.Size = new System.Drawing.Size(70, 15);
-      this.label2.TabIndex = 1;
-      this.label2.Text = "Beta Release 1";
+      this.label1.Text = "PwrIDE";
       // 
       // label3
       // 
@@ -71,7 +60,7 @@
       this.label3.Name = "label3";
       this.label3.Size = new System.Drawing.Size(185, 13);
       this.label3.TabIndex = 2;
-      this.label3.Text = "Copyright © 2010-2011 Dillon Aumiller";
+      this.label3.Text = "Copyright © 2011-2013 Dillon Aumiller";
       // 
       // label4
       // 
@@ -166,12 +155,12 @@
       // 
       this.lnkPwrPlus.AutoSize = true;
       this.lnkPwrPlus.LinkColor = System.Drawing.Color.Blue;
-      this.lnkPwrPlus.Location = new System.Drawing.Point(120, 60);
+      this.lnkPwrPlus.Location = new System.Drawing.Point(97, 45);
       this.lnkPwrPlus.Name = "lnkPwrPlus";
-      this.lnkPwrPlus.Size = new System.Drawing.Size(119, 13);
+      this.lnkPwrPlus.Size = new System.Drawing.Size(151, 13);
       this.lnkPwrPlus.TabIndex = 10;
       this.lnkPwrPlus.TabStop = true;
-      this.lnkPwrPlus.Text = "http://www.PwrIDE.org";
+      this.lnkPwrPlus.Text = "http://pwrplus.sourceforge.net";
       this.lnkPwrPlus.VisitedLinkColor = System.Drawing.Color.Blue;
       this.lnkPwrPlus.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lnkPwrPlus_LinkClicked);
       // 
@@ -199,7 +188,6 @@
       this.Controls.Add(this.label5);
       this.Controls.Add(this.label4);
       this.Controls.Add(this.label3);
-      this.Controls.Add(this.label2);
       this.Controls.Add(this.label1);
       this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
       this.MaximizeBox = false;
@@ -218,7 +206,6 @@
     #endregion
 
     private System.Windows.Forms.Label label1;
-    private System.Windows.Forms.Label label2;
     private System.Windows.Forms.Label label3;
     private System.Windows.Forms.Label label4;
     private System.Windows.Forms.Label label5;

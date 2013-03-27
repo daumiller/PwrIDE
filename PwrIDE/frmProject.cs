@@ -5,7 +5,6 @@ using System.Windows.Forms;
 using System.ComponentModel;
 using System.Collections.Generic;
 using WeifenLuo.WinFormsUI.Docking;
-using PwrPlus;
 using Symitar;
 
 namespace PwrIDE
@@ -458,68 +457,6 @@ namespace PwrIDE
       ProjectUpdateSave(prj);
     }
     //------------------------------------------------------------------------
-    private void mnuFileCompile_Click(object sender, EventArgs e)
-    {
-      Project prj = new Project();
-      ProjectFile file = ProjectFileFromNode(treeProj.SelectedNode, ref prj);
-      if(file.Type != ProjectFile.FileType.PWRPLS) return;
-      
-      string input;
-      try
-      {
-        input = file.Read();
-      }
-      catch(Exception ex)
-      {
-        MessageBox.Show("Error Reading File \""+file.Name+"\"\n"+ex.Message, "PwrIDE", MessageBoxButtons.OK, MessageBoxIcon.Error);
-        return;
-      }
-      string output = Util.MainForm.Compile(input, file.Name, Util.MainForm.onCompileError, Util.MainForm.onCompileException, new Importer(prj));
-      if(output == null) return;
-
-      ProjectFile compiled = prj.AddCompiledSource(file, output);
-      if(compiled == null)
-      {
-        frmSource src = new frmSource(file.Name, output);
-        src.Show(Util.MainForm.dockPanel);
-        src.Activate();
-        src.icsEditor.Focus();
-        return;
-      }
-      ProjectUpdateSave(prj);
-      
-      //see if this source is already open, or we need to open it
-      frmSource update=null;
-      IDockContent[] docs = Util.MainForm.dockPanel.DocumentsToArray();
-      for(int i=0; i<docs.Length; i++)
-      {
-        frmSource curr = (frmSource)docs[i];
-        if(curr.fileOrigin == frmSource.Origin.PROJECT)
-        {
-          if(curr.fileProject == compiled)
-          {
-            update = curr;
-            break;
-          }
-        }
-      }
-      if(update == null)
-      {
-        frmSource src = new frmSource(compiled);
-        src.Show(Util.MainForm.dockPanel);
-        src.Activate();
-        src.icsEditor.Focus();
-      }
-      else
-      {
-        if(update.ReloadProjectFile())
-        {
-          update.Activate();
-          update.icsEditor.Focus();
-        }
-      }
-    }
-    //------------------------------------------------------------------------
     private void mnuFileInstall_Click(object sender, EventArgs e)
     {
       Project prj = new Project();
@@ -782,11 +719,6 @@ namespace PwrIDE
         Project prj = new Project();
         ProjectFile file = ProjectFileFromNode(e.Node, ref prj);
 
-        if(file.Type != ProjectFile.FileType.PWRPLS)
-          mnuFileCompile.Enabled = false;
-        else
-          mnuFileCompile.Enabled = true;
-
         if((!prj.Local) && (file.Type == ProjectFile.FileType.REPGEN))
           mnuFileInstall.Enabled = mnuFileRun.Enabled = true;
         else
@@ -853,13 +785,9 @@ namespace PwrIDE
             mnuProject.Show(MousePosition);
             break;
           case 3: //PwrPlus
-            mnuFileCompile.Enabled = true;
-            mnuFileInstall.Enabled = false;
-            mnuFileRun.Enabled     = false;
-            mnuFile.Show(MousePosition);
+            MessageBox.Show("Exception FRMPROJECT.TREEPROJ.NODEMOUSECLICK.PWRPLUS\nYou shouldn't see this...\n","PwrIDE",MessageBoxButtons.OK,MessageBoxIcon.Error);
             break;
           case 4: //RepGen
-            mnuFileCompile.Enabled = false;
             mnuFileInstall.Enabled = false;
             mnuFileRun.Enabled     = false;
             if(e.Node.Parent.ImageIndex == 1) //sym
@@ -875,7 +803,6 @@ namespace PwrIDE
             mnuFile.Show(MousePosition);
             break;
           case 5: //Letter
-            mnuFileCompile.Enabled = false;
             mnuFileInstall.Enabled = false;
             mnuFileRun.Enabled     = false;
             mnuFile.Show(MousePosition);

@@ -163,9 +163,8 @@
       this.lstFileType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
       this.lstFileType.FormattingEnabled = true;
       this.lstFileType.Items.AddRange(new object[] {
-            "PowerPlus",
             "RepGen",
-            "Letterfile"});
+            "Other (Letterfiles/Datafiles/...)"});
       this.lstFileType.Location = new System.Drawing.Point(100, 12);
       this.lstFileType.Name = "lstFileType";
       this.lstFileType.Size = new System.Drawing.Size(210, 21);

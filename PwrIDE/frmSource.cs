@@ -10,7 +10,6 @@ using ICSharpCode.TextEditor;
 using ICSharpCode.TextEditor.Document;
 using ICSharpCode.TextEditor.Gui.CompletionWindow;
 using Symitar;
-using PwrPlus;
 
 namespace PwrIDE
 {
@@ -36,7 +35,6 @@ namespace PwrIDE
     public string               fileName;
     public Origin               fileOrigin;
     public ProjectFile.FileType fileType;
-    private PwrError.ErrorDesc  errPwr = new PwrError.ErrorDesc(-1,0,"");
     private RepErr              errRep = RepErr.None();
     private ICompletionDataProvider completer;
     private IFoldingStrategy        folder;
@@ -447,18 +445,6 @@ namespace PwrIDE
       runner.Show();
     }
     //------------------------------------------------------------------------
-    public void SetPwrError(PwrError.ErrorDesc error)
-    {
-      errPwr = error;
-      if (error.Code != -1)
-      {
-        Util.MainForm.Errors.SetError(error.Filename, error.Line, error.Message);
-        Util.MainForm.Errors.Activate();
-      }
-      else
-        Util.MainForm.Errors.ClearErrors();
-    }
-    //------------------------------------------------------------------------
     public void SetRepError(RepErr error)
     {
       errRep = error;
@@ -473,17 +459,7 @@ namespace PwrIDE
     //------------------------------------------------------------------------
     public void MoveToError()
     {
-    	if(errPwr.Code != -1)
-    	{
-        if(errPwr.Filename == fileName)
-        {
-          icsEditor.ActiveTextAreaControl.Caret.Position = new TextLocation(0, errPwr.Line-1);
-          icsEditor.Focus();
-        }
-        /*else
-          //TODO: //open source file (if not already open), setPwrError on it, and MoveToLine() it*/
-    	}
-    	else if(errRep.any)
+    	if(errRep.any)
     	{
     		if(errRep.fileSrc.name == errRep.fileErr) //error was actually in this file, not an included one
     		{
@@ -708,8 +684,7 @@ namespace PwrIDE
       Util.MainForm.Text = Text + " - PwrIDE";
 
       Util.MainForm.Errors.ClearErrors();
-      if(errPwr.Code != -1) Util.MainForm.Errors.SetError(fileName, errPwr.Line, errPwr.Message);
-      if(errRep.any)        Util.MainForm.Errors.SetError(errRep.fileErr, errRep.line, errRep.error);
+      if(errRep.any) Util.MainForm.Errors.SetError(errRep.fileErr, errRep.line, errRep.error);
       
       procedureList_UserGenerated = false;
       if(Util.MainForm.toolProcedures.Items.Count>0)

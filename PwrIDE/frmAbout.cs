@@ -19,7 +19,7 @@ namespace PwrIDE
     //========================================================================
     private void lnkPwrPlus_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
     {
-      System.Diagnostics.Process.Start("http://www.PwrIDE.org");
+      System.Diagnostics.Process.Start("http://pwrplus.sourceforge.net");
     }
     //------------------------------------------------------------------------
     private void lnkSourceForge_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)

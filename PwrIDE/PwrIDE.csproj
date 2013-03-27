@@ -269,10 +269,6 @@
     <Content Include="Libraries\WeifenLuo.WinFormsUI.Docking.dll" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\PwrPlus\PwrPlus.csproj">
-      <Project>{71F3957E-0C7D-4214-B87A-C4F2D1308232}</Project>
-      <Name>PwrPlus</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Symitar\Symitar.csproj">
       <Project>{3EC60B99-DCC6-4C15-B14C-DD49B1DFD215}</Project>
       <Name>Symitar</Name>
